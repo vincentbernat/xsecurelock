@@ -134,7 +134,7 @@ static void AddMonitor(Monitor* out_monitors, size_t* num_monitors,
 static int GetMonitorsXRandR12(Display* dpy, Window window, int wx, int wy,
                                int ww, int wh, Monitor* out_monitors,
                                size_t* out_num_monitors, size_t max_monitors) {
-  XRRScreenResources* screenres = XRRGetScreenResources(dpy, window);
+  XRRScreenResources* screenres = XRRGetScreenResourcesCurrent(dpy, window);
   if (screenres == NULL) {
     return 0;
   }
